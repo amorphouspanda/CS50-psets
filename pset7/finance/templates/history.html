@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Action</th>
+                <th>Date-time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for action in history %}
+                <tr>
+                    <td>{{ action[0] }}</td>
+                    <td>{{ action[1] }}</td>
+                    <td>{{ action[2] }}</td>
+                    <td>{{ action[3] }}</td>
+                    <td>{{ action[4] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

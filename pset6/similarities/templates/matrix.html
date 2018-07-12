@@ -1,0 +1,46 @@
+<table class="table table-sm">
+
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+
+            {% for letter in s2 %}
+            <th>{{letter}}</th>
+            {% endfor %}
+        </tr>
+
+        <tr>
+            <th></th>
+            <th></th>
+
+            {% for a in range(s2|length + 1) %}
+            <th>{{a}}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td></td>
+            <td>0</td>
+            {% for a in matrix[0] %}
+            <td>{{a[0]}}</td>
+            {% endfor %}
+        </tr>
+
+        {% for a in range(s1|length) %}
+        <tr>
+            <th>{{s1[a]}}</th>
+            <th>{{a + 1}}</th>
+
+            {% for b in matrix[a + 1] %}
+            <td>{{b[0]}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
